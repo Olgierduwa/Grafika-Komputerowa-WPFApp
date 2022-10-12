@@ -1,0 +1,44 @@
+﻿<Page x:Class="Grafika_Komputerowa.Pages.AnalizaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Grafika_Komputerowa.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AnalizaPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button Content="Wczytaj plik" Width="200" Click="LoadFile"/>
+            <Button Name="B0" Content="Przywróć pierwotny obraz" Width="auto" Click="RestoreOriginal"/>
+
+            <TextBlock Name="TY" Text="Y: [0-40]"/>
+            <Slider Name="YMIN" Maximum="40" IsSnapToTickEnabled="True" ValueChanged="SetSliderValue" Width="auto" />
+            <Slider Name="YMAX" Maximum="40" IsSnapToTickEnabled="True" ValueChanged="SetSliderValue" Width="auto" Value="40" />
+            <TextBlock Name="TU" Text="U: [0-40]"/>
+            <Slider Name="UMIN" Maximum="40" IsSnapToTickEnabled="True" ValueChanged="SetSliderValue" Width="auto" />
+            <Slider Name="UMAX" Maximum="40" IsSnapToTickEnabled="True" ValueChanged="SetSliderValue" Width="auto" Value="40"  />
+            <TextBlock Name="TV" Text="V: [0-40]"/>
+            <Slider Name="VMIN" Maximum="40" IsSnapToTickEnabled="True" ValueChanged="SetSliderValue" Width="auto" />
+            <Slider Name="VMAX" Maximum="40" IsSnapToTickEnabled="True" ValueChanged="SetSliderValue" Width="auto" Value="40"  />
+            
+            <!--<TextBox Name="T1" Width="auto" IsEnabled="False" PreviewTextInput="PrevTextInput" Text="0"/>-->
+            <Button Name="B1" Content="Zapisane suwaki 1" Width="auto" Click="Preset1"/>
+            <Button Name="B2" Content="Zapisane suwaki 2" Width="auto" Click="Preset2"/>
+            <TextBlock Name="PROCENT" Text="Procent obiektu: [0%]"/>
+            <TextBlock Name="PIXELS" Text="Pixeli obiektu: [0px / 0px]"/>
+            <Button Name="B3" IsEnabled="False" Content="Dylatacja" Width="auto" Click="DylatacjaClick"/>
+            <Button Name="B4" IsEnabled="False" Content="Erozja" Width="auto" Click="ErozjaClick"/>
+            <Button Name="B5" IsEnabled="False" Content="Otwarcie" Width="auto" Click="OtwarcieClick"/>
+            <Button Name="B6" IsEnabled="False" Content="Domknięcie" Width="auto" Click="DomkniecieClick"/>
+            <Button Name="SAVEBUTTON" Content="Zapisz obraz" Width="auto" Click="SaveButtonClick"/>
+        </StackPanel>
+
+        <Image Name="image" Grid.Column="1" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+    </Grid>
+</Page>

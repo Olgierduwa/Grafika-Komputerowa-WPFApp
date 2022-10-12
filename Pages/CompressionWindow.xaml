@@ -1,0 +1,19 @@
+﻿<Window x:Class="Grafika_Komputerowa.Pages.CompressionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafika_Komputerowa.Pages"
+        mc:Ignorable="d"
+        Title="Stopień Kompresii" Height="200" Width="200">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Slider Width="auto" Margin="5" BorderThickness="5" Maximum="10" ValueChanged="ChangeValue" Value="10" TickFrequency="1" TickPlacement="Both" IsSnapToTickEnabled="True"/>
+        <Button Click="button1" Width="auto" Margin="5" Content="Zatwierdź" Grid.Row="1"/>
+        <Button Click="back" Width="auto" Margin="5" Content="Anuluj" Grid.Row="2"/>
+    </Grid>
+</Window>

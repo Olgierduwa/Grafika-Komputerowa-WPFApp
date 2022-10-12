@@ -1,0 +1,35 @@
+﻿<Page x:Class="Grafika_Komputerowa.Pages.FiltrPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Grafika_Komputerowa.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FiltrPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button Content="Wczytaj plik" Width="auto" Click="LoadFile"/>
+            <Slider Name="SR" Maximum="255" Width="150" IsEnabled="False" IsSnapToTickEnabled="True" ValueChanged="SliderValueChanged" Background="#FF0000"/>
+            <Slider Name="SG" Maximum="255" Width="150" IsEnabled="False" IsSnapToTickEnabled="True" ValueChanged="SliderValueChanged" Background="#00FF00"/>
+            <Slider Name="SB" Maximum="255" Width="150" IsEnabled="False" IsSnapToTickEnabled="True" ValueChanged="SliderValueChanged" Background="#0000FF"/>
+            <Slider Name="SV" Maximum="40" Width="150" IsEnabled="False" IsSnapToTickEnabled="True" ValueChanged="SliderBrightnessChanged" Background="#FFFFFF"/>
+            <Slider Name="SM" Maximum="10" Width="150" IsEnabled="False" IsSnapToTickEnabled="True" ValueChanged="SliderMaskChanged" Background="#444444"/>
+            <Button Name="BGA" IsEnabled="False" Content="Wyszarz (średnia)" Width="auto" Click="GreyScale_Average"/>
+            <Button Name="BGH" IsEnabled="False" Content="Wyszarz (ludzkie oko)" Width="auto" Click="GreyScale_HumanEye"/>
+            <Button Name="B1" IsEnabled="False" Content="Wygładź (średnia)" Width="auto" Click="Smoothing_Average"/>
+            <Button Name="B2" IsEnabled="False" Content="Wygładź (mediana)" Width="auto" Click="Smoothing_Median"/>
+            <Button Name="B3" IsEnabled="False" Content="Znajdź Krawędzie" Width="auto" Click="FindEdges"/>
+            <Button Name="B4" IsEnabled="False" Content="Wyostrz" Width="auto" Click="Sharp"/>
+            <Button Name="B5" IsEnabled="False" Content="Rozmyj" Width="auto" Click="Blur"/>
+            <Button Name="B6" Content="Przywróć pierwotny obraz" Width="auto" Click="RestoreOriginal"/>
+        </StackPanel>
+
+        <Image Name="image" Grid.Column="1" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+    </Grid>
+</Page>

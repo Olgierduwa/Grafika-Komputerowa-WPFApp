@@ -1,0 +1,36 @@
+﻿<Page x:Class="Grafika_Komputerowa.Pages.ShapePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Grafika_Komputerowa.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShapePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button Content="Wyczyść" Height="30" Width="100" Click="CleanCanvas"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="0" Name="X" PreviewTextInput="PrevTextInput"/>
+                <TextBox Text="0" Name="Y" PreviewTextInput="PrevTextInput" Grid.Column="1"/>
+            </Grid>
+            <Button Content="Dodaj Punkt" Height="30" Width="100" Click="AddPoint"/>
+            <Button Content="Skończ Figurę" Height="30" Width="100" Click="CloseShape"/>
+            <Button Content="Przesuń" Height="30" Width="100" Click="MoveShapeButton"/>
+            <TextBox Text="90" Name="A" PreviewTextInput="PrevTextInput" Width="auto" Margin="4"/>
+            <Button Content="Obróć" Height="30" Width="100" Click="RotateShapeButton"/>
+            <Button Content="Przeskaluj" Height="30" Width="100" Click="ScaleShapeButton"/>
+        </StackPanel>
+        <Canvas Grid.Column="1" Name="canvas" Background="White" MouseLeftButtonDown="LeftClickOnCanvas"
+                MouseRightButtonDown="RightClickOnCanvas" MouseMove="EditShape"/>
+    </Grid>
+</Page>

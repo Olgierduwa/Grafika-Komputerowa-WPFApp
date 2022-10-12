@@ -1,0 +1,29 @@
+﻿<Window x:Class="Grafika_Komputerowa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafika_Komputerowa"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="#444444">
+            <Button Content="Paint" Width="80" Margin="4,4,0,4" Click="PaintPageClick"/>
+            <Button Content="PPM" Width="80" Margin="4,4,0,4" Click="PPMPageClick"/>
+            <Button Content="RGB" Width="80" Margin="4,4,0,4" Click="RGBPageClick"/>
+            <Button Content="Filtr" Width="80" Margin="4,4,0,4" Click="FiltrPageClick"/>
+            <Button Content="Histogram" Width="80" Margin="4,4,0,4" Click="HistogramPageClick"/>
+            <Button Content="Bézier" Width="80" Margin="4,4,0,4" Click="BézierPageClick"/>
+            <Button Content="Figury" Width="80" Margin="4,4,0,4" Click="ShapePageClick"/>
+            <Button Content="Morfologia" Width="80" Margin="4,4,0,4" Click="MorfologiaPageClick"/>
+            <Button Content="Analiza" Width="80" Margin="4,4,0,4" Click="AnalizaPageClick"/>
+        </StackPanel>
+        <Frame Grid.Row="1" Name="frame" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+    
+</Window>
